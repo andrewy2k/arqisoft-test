@@ -1,0 +1,73 @@
+<div class="wrapper" *ngIf="goodLoadStatus">
+  <form [formGroup]="goodForm" (submit)="save($event)">
+    <div class="good-elem-c">
+      <span class="good-elem-c__label">ID товара: &nbsp;</span>
+      <span>{{good.id}}</span>
+    </div>
+
+    <div class="good-img" (click)="selectPhoto()">
+      <img
+        appReplaceErrorImage
+        src="{{makeUrl(good.img)}}"
+        class="rounded-photo"
+        alt="{{good.name}}"
+      />
+      <input
+        type="file"
+        #fileInput
+        id="img"
+        (change)="fileChange(fileInput.files)"
+        style="width: 0px; height: 0px"
+      />
+    </div>
+
+    <div class="good-elem-c">
+      <label for="groupName" class="good-elem-c__label">Категория товара:</label>
+      <select
+        id="groupName"
+        formControlName="groupName"
+        class="good-elem-c__input"
+      >
+        <option disabled value="null">Выберите</option>
+        <option *ngFor="let category of categories">{{category.name}}</option>
+      </select>
+    </div>
+
+    <div class="good-elem-c">
+      <label class="good-elem-c__label" for="name">Наименование товара:</label>
+      <input
+        class="good-elem-c__input"
+        type="text"
+        id="name"
+        formControlName="name"
+      />
+    </div>
+
+    <div class="good-elem-c">
+      <label class="good-elem-c__label" for="description">Описание товара:</label>
+      <textarea
+        class="good-elem-c__input"
+        type="text"
+        id="description"
+        formControlName="description"
+      ></textarea>
+    </div>
+
+    <div class="good-elem-c">
+      <label class="good-elem-c__label" for="price">Стоимость товара:</label>
+      <input
+        class="good-elem-c__input"
+        type="text"
+        id="price"
+        formControlName="price"
+      />
+    </div>
+    <div class="btns-c">
+      <div class="btn" (click)="close()"><i class="icon-cancel"></i>Закрыть</div>
+      <button type="submit" class="btn btn_save"><i class="icon-floppy"></i>Сохранить</button>
+      <div class="btn btn_delete" (click)="delete()"><i class="icon-trash"></i>Удалить</div>
+    </div>
+  </form>
+
+
+</div>

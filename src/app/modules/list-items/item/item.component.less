@@ -1,0 +1,90 @@
+@import (less) "../../../../assets/styles/mixin.less";
+
+:host {
+  .flex_column_start;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  font-family: 'Comfortaa', cursive;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.wrapper{
+  .flex_column_start;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+}
+.good-elem-c{
+  .flex_row_start;
+  align-items: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.good-elem-c__label{
+  font-weight: 700;
+  color: @btn_blue;
+  margin-right: 20px;
+}
+.good-elem-c__input{
+  .flex_row_start;
+  align-items: center;
+  width: 200px;
+  padding: 8px 10px;
+  outline: none;
+  border-radius: 3px;
+  border:1px solid @border_light_gray;
+  outline: none;
+  font-size: 16px;
+}
+.good-elem-c__input::placeholder{
+  outline: none;
+  padding: 8px 15px;
+}
+
+.good-img{
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+  filter: grayscale(80%);
+  .transition_4;
+  img{
+    max-width: 150px;
+    max-height: 150px;
+  }
+}
+.good-img:hover{
+  filter: grayscale(0%);
+}
+.btns-c{
+  .flex_row_start;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.btn_save {
+  background: @green;
+  margin-left: 20px;
+  border: none;
+  font-family: 'Comfortaa', cursive;
+  font-size: 16px;
+}
+
+.btn_save:hover {
+  background: darken(@green, 8%);
+}
+.btn_delete{
+  background: @red;
+  margin-left: 20px;
+}
+.btn_delete:hover{
+  background: darken(@red,8%);
+}
+
+input.ng-touched.ng-invalid{
+  border-color: @red;
+}
+select.ng-touched.ng-invalid{
+  border-color: @red;
+}

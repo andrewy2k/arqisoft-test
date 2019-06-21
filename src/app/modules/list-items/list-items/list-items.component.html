@@ -1,0 +1,29 @@
+<div class="header">
+  <div class="icon-c-left">
+    <div
+      class="icon icon_active"
+      (click)="insertGood()"
+    >
+      <i class="icon-doc-add"></i>
+    </div>
+    <div class="search-c">
+      <input class="search-c__input" type="text" [formControl]="searchQuery">
+      <div class="search-c__icon"><i class="icon-search"></i></div>
+    </div>
+  </div>
+  <div
+    class="icon"
+    [ngClass]="{'icon_active':viewListStatus}"
+    (click)="viewListStatus=false"
+  >
+    <i class="icon-th-outline"></i>
+  </div>
+  <div
+    class="icon"
+    [ngClass]="{'icon_active':!viewListStatus}"
+    (click)="viewListStatus=true"
+  >
+    <i class="icon-th-list-outline"></i>
+  </div>
+</div>
+<app-items [viewListStatus]="viewListStatus" [items]="data.filteredGoods"></app-items>

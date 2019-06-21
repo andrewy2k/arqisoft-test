@@ -1,0 +1,152 @@
+@import (less) "../../../../assets/styles/mixin.less";
+
+:host {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  font-family: 'Comfortaa', cursive;
+}
+
+.wrapper {
+  .flex_row_around_wrap;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper_list{
+  .flex_column_start;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+}
+
+
+.item-c {
+  position: relative;
+  .flex_column_start;
+  align-items: center;
+  width: 300px;
+  height: 430px;
+  margin: 10px;
+  border: 1px solid @border_gray;
+  border-radius: 4px;
+  .transition_4;
+}
+
+.item-c:hover, .item-c_list:hover {
+  cursor: pointer;
+  box-shadow: 0 4px 10px @shadow;
+}
+.item-c_list{
+  position: relative;
+  .flex_row_start;
+  align-items: center;
+  width: calc(100% - 22px);
+  height: 200px;
+  margin: 10px;
+  border: 1px solid @border_gray;
+  border-radius: 4px;
+  .transition_4;
+}
+
+
+.item-c__delete {
+  position: absolute;
+  font-size: 20px;
+  color: @red;
+  .transition_4;
+  padding: 5px;
+  top: 10px;
+  right: 10px;
+}
+
+.item-c__delete:hover {
+  cursor: pointer;
+  transform: rotate(180deg);
+}
+
+.item-c__image {
+  .flex_column_center;
+  align-items: center;
+  margin: 10px;
+  width: 280px;
+  height: 280px;
+  border-bottom: 1px solid @border_gray;
+
+  img {
+    max-height: 280px;
+    max-width: 280px;
+  }
+}
+
+.item-c__image_list {
+  .flex_column_center;
+  align-items: center;
+  margin: 10px;
+  width: 160px;
+  height: 140px;
+  border-right: 1px solid @border_gray;
+  padding-right: 20px;
+  img {
+    max-height: 140px;
+    max-width: 140px;
+  }
+  margin-right: 20px;
+}
+
+
+.item-c__data{
+  .flex_column_start;
+  align-items: center;
+}
+.item-c__data_list{
+  .flex_column_start;
+  align-items: flex-start;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 700;
+  color: @btn_blue;
+}
+.label_list{
+  font-size: 20px;
+  color: @btn_blue;
+  font-weight: 600;
+}
+
+.item-c__category {
+  .flex_column_center;
+  align-items: center;
+  font-size: 20px;
+  color: @text_gray;
+  margin-bottom: 10px;
+}
+.item-c__data-c_list {
+  .flex_row_start;
+  align-items: center;
+  font-size: 20px;
+  color: @text_gray;
+  margin-bottom: 10px;
+}
+
+.item-c__name {
+  .flex_column_center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: @text_gray;
+  margin-bottom: 10px;
+}
+
+.item-c__count-view {
+  .flex_row_center;
+  align-items: center;
+  font-size: 20px;
+  color: @text_gray;
+
+  i {
+    color: @btn_blue;
+  }
+}

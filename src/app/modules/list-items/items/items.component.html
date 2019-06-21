@@ -1,0 +1,33 @@
+<div [ngClass]="{'wrapper' : !viewListStatus, 'wrapper_list' : viewListStatus}">
+  <div [ngClass]="{'item-c' : !viewListStatus, 'item-c_list' : viewListStatus}"
+       *ngFor="let item of items; let ind = index; trackBy: trackByFn"
+       (click)="openGood(ind)"
+  >
+    <div class="item-c__delete"
+         (click)="delete(ind, $event)"
+    >
+      <i class="icon-cancel"></i>
+    </div>
+    <div [ngClass]="{'item-c__image': !viewListStatus, 'item-c__image_list' : viewListStatus}">
+      <img
+        appReplaceErrorImage
+        src="{{makeUrl(item.img)}}"
+        alt="{{item.name}}"
+      >
+    </div>
+    <div [ngClass]="{'item-c__data': !viewListStatus, 'item-c__data_list' : viewListStatus}">
+      <div [ngClass]="{'item-c__category': !viewListStatus, 'item-c__data-c_list' : viewListStatus}">
+        <span [ngClass]="{'label': !viewListStatus, 'label_list' : viewListStatus}">Категория: &nbsp;</span>
+        <span>{{item.groupName}}</span>
+      </div>
+      <div [ngClass]="{'item-c__name': !viewListStatus, 'item-c__data-c_list' : viewListStatus}">
+        <span [ngClass]="{'label': !viewListStatus, 'label_list' : viewListStatus}">Наименование: &nbsp;</span>
+        <span>{{item.name}}</span>
+      </div>
+      <div class="item-c__count-view">
+        <i class="icon-eye"></i>
+        <span>&nbsp;{{item.numbersOfViews}}</span>
+      </div>
+    </div>
+  </div>
+</div>
